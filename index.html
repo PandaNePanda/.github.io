@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <meta name="robots" content="noindex, nofollow">  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title id="page-title">Ермолаев Никита Андреевич — Резюме</title>
+  <title id="page-title">Резюме</title>
   <link rel="icon" type="image/png" href="https://psv4.userapi.com/s/v1/d2/yawT6sNwSLzTCFzz8DZ-tBodwmJo9HUDG_6NJLu2bj28SbNXGpd7u5u1bS8Eb9zZG9updz8FHlvguyQrWq1c4AEWCr7WcLkoZWYdWoQMxhLN8HUYGGRwT8OwKiRJi0TQkpKWVzUH4woM/favic.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -314,11 +315,11 @@
       <div class="contact-info" id="contacts-list">
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
-          <span id="email" style="cursor: pointer;">nikitaer2789@gmail.com</span>
+          <span id="email" style="cursor: pointer;">nikitaer<span style="display:none">no-spam</span>2789@gmail.com</span>
         </div>
         <div class="contact-item">
           <i class="fab fa-telegram"></i>
-          <a href="https://t.me/pandanepanda" target="_blank">@pandanepanda</a>
+          <span id="telegram" style="cursor: pointer; color: var(--accent);">@pandanepanda</span>
         </div>
         <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span id="location-text">Астана, Казахстан</span></div>
         <div class="contact-item"><i class="fas fa-passport"></i> <span id="citizenship-text">Гражданство: РФ, ВНЖ: РК</span></div>
@@ -571,6 +572,17 @@
           console.warn('Не удалось скопировать email:', err);
         }
       });
+      document.getElementById('telegram').addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText('@pandanepanda');
+            const notification = document.getElementById('copy-notification');
+            notification.textContent = 'Скопировано!';
+            notification.style.opacity = '1';
+            setTimeout(() => { notification.style.opacity = '0'; }, 1800);
+        } catch (err) {
+            console.warn('Не удалось скопировать Telegram:', err);
+        }
+        });      
       const sections = document.querySelectorAll('section');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
