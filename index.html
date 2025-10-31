@@ -321,8 +321,6 @@
           <i class="fab fa-telegram"></i>
           <span id="telegram" style="cursor: pointer; color: var(--accent);">@pandanepanda</span>
         </div>
-        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span id="location-text">Астана, Казахстан</span></div>
-        <div class="contact-item"><i class="fas fa-passport"></i> <span id="citizenship-text">Гражданство: РФ, ВНЖ: РК</span></div>
       </div>
     </section>
     <section id="about">
@@ -509,8 +507,6 @@
         hobbiesTitle: "Interests",
         hobbiesText: "I’m interested in modern IT technologies, macroeconomics, and the development of digital markets. I study payment systems, blockchain, and process automation mechanisms. I enjoy applied programming, digital marketing, and analyzing business model efficiency. I pay special attention to business legality, organizational structure, and financial transparency. I’m passionate about exploring how technology and sound management systems enable the creation of sustainable and scalable projects.",
         contactsTitle: "Contacts",
-        locationText: "Astana, Kazakhstan",
-        citizenshipText: "Citizenship: Russia, Residence permit: Kazakhstan",
         footerText: "Resume updated in October 2025"
       }
     };
@@ -544,8 +540,6 @@
       document.getElementById('hobbies-title').textContent = translations[lang].hobbiesTitle;
       document.getElementById('hobbies-text').textContent = translations[lang].hobbiesText;
       document.getElementById('contacts-title').textContent = translations[lang].contactsTitle;
-      document.getElementById('location-text').textContent = translations[lang].locationText;
-      document.getElementById('citizenship-text').textContent = translations[lang].citizenshipText;
       document.getElementById('footer-text').textContent = translations[lang].footerText;
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
