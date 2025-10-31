@@ -219,13 +219,15 @@
     }
 
     ul.skills-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 12px;
-      color: var(--accent);
-      font-size: 1.8rem;
-      font-weight: bold;
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--accent);
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 1;
     }
 
     .certificates {
@@ -364,6 +366,13 @@
           </a>
           <p id="cert-web">Веб-разработка для начинающих: HTML и CSS</p>
         </div>
+        <div class="certificate-item">
+            <a href="https://stepik.org/cert/3010704" target="_blank">
+              <img src="https://sun9-5.userapi.com/s/v1/if2/YQko6y8P4wK3qgdoSdieDo5VKDaCpZYsbhzteYIqfskWE14xwxuoW3s4gG8nZKozY3TMfHAM6yHx6jqGsOo2YvMz.jpg?quality=95&as=32x23,48x34,72x51,108x76,160x113,240x170,360x255,480x340,540x382,640x453,720x509,1080x764,1280x906,1440x1019,1754x1241&from=bu&cs=1754x0" 
+                   alt="CRM: от бизнес-концепции к маркетингу">
+            </a>
+            <p id="cert-crm">CRM: от бизнес-концепции к маркетингу</p>
+        </div>
       </div>
     </section>
     <section id="skills">
@@ -450,6 +459,7 @@
         additionalEducationTitle: "Дополнительное образование",
         certPython: "Программирование на Python",
         certWeb: "Веб-разработка для начинающих: HTML и CSS",
+        certCrm: "CRM: от бизнес-концепции к маркетингу",
         skillsTitle: "Навыки",
         skill1: "Поддержка и диагностика ПК.",
         skill2: "Работа с операционной системой, восстановление данных, администрирование.",
@@ -493,6 +503,7 @@
         additionalEducationTitle: "Additional Education",
         certPython: "Python Programming",
         certWeb: "Web Development for Beginners: HTML & CSS",
+        certCrm: "CRM: From Business Concept to Marketing",
         skillsTitle: "Skills",
         skill1: "PC support and diagnostics.",
         skill2: "Operating system management, data recovery, system administration.",
