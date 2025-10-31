@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="page-title">Ермолаев Никита Андреевич — Резюме</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --light: #ecf0f1;
+      --gray: #7f8c8d;
+      --white: #ffffff;
+      --transition: all 0.4s ease;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--primary);
+      background-color: #fafafa;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .lang-switcher {
+      text-align: right;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .lang-btn {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 4px 10px;
+      margin-left: 6px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      font-weight: bold;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin: 30px 0;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--secondary);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header-text h1 {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .header-text p {
+      color: var(--gray);
+      font-size: 1.1rem;
+    }
+
+    section {
+      background: var(--white);
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: var(--secondary);
+      margin-bottom: 16px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    ul.skills-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.skills-list li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    ul.skills-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+    }
+
+    .hobbies {
+      font-style: normal;
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Дополнительное образование */
+    .certificates {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .certificate-item {
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .certificate-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .certificate-item img:hover {
+      transform: scale(1.02);
+    }
+
+    .certificate-item a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .certificate-item p {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .lang-switcher {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .header-text h1 {
+        font-size: 2rem;
+      }
+      .certificates {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <header>
+      <img src="https://sun9-77.userapi.com/s/v1/ig2/quDGKTeH2MHpygZ35fIPzwMPMGIY7pylMY1V-rJz-Tvtu8nX-dUAK63DOb2HfMMfo3GWY2GTnDa5e9OaStP1M1g7.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640&from=bu&cs=640x0" 
+           alt="Nikita Ermolaev" class="profile-pic">
+      <div class="header-text">
+        <h1 id="name">Ермолаев Никита Андреевич</h1>
+        <p id="job-title">IT-специалист | Поддержка пользователей | Автоматизация процессов</p>
+      </div>
+    </header>
+
+    <!-- Контакты наверху -->
+    <section id="contacts">
+      <h2 id="contacts-title">Контакты</h2>
+      <div class="contact-info" id="contacts-list">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span id="email" style="cursor: pointer; text-decoration: underline; color: var(--secondary);">nikitaer2789@gmail.com</span>
+        </div>
+        <div class="contact-item"><i class="fas fa-phone"></i> +7 (982) 157-1947</div>
+        <div class="contact-item"><i class="fas fa-phone"></i> +7 (775) 152-7022</div>
+        <div class="contact-item">
+          <i class="fab fa-telegram"></i>
+          <a href="https://t.me/pandanepanda" target="_blank" style="color: var(--secondary); text-decoration: none; margin-left: 8px;">@pandanepanda</a>
+        </div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span id="location-text">Астана, Казахстан</span></div>
+        <div class="contact-item"><i class="fas fa-passport"></i> <span id="citizenship-text">Гражданство: РФ, ВНЖ: РК</span></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 id="about-title">Обо мне</h2>
+      <p id="about-text">Самоорганизованный, внимательный и технически грамотный человек. Умею общаться с людьми и находить общий язык даже в стрессовых ситуациях. Ценю честность, эффективность и возможность постоянно учиться новому.</p>
+    </section>
+
+    <section id="experience">
+      <h2 id="experience-title">Опыт работы</h2>
+      <div id="experience-content">
+        <p><strong>Self-employed</strong> • July 2020 — Present</p>
+        <ul>
+          <li>Building online stores and websites for RMT platforms.</li>
+          <li>Developing automation bots for customer interaction and routine tasks.</li>
+          <li>Setting up legal international currency transfer systems.</li>
+          <li>Providing user support for software setup (Windows, Office, browsers, VPN, etc.).</li>
+          <li>Troubleshooting PC issues, data recovery, OS installation and updates.</li>
+          <li>Consulting on online services (email, cloud solutions, crypto platforms).</li>
+          <li>Automating workflows using Python and AI tools.</li>
+          <li>Maintaining high client satisfaction through empathy and attention to detail.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 id="education-title">Образование</h2>
+      <p id="education-text">Surgut State University • Bachelor's in Ecology • 2021</p>
+    </section>
+
+    <!-- Новый блок: Дополнительное образование -->
+    <section id="additional-education">
+      <h2 id="additional-education-title">Дополнительное образование</h2>
+      <div class="certificates">
+        <div class="certificate-item">
+          <a href="https://stepik.org/cert/3010454" target="_blank">
+            <img src="https://sun9-71.userapi.com/s/v1/if2/qaxGpzuAxqE6Kn141wFMy9uJJiC7koqg2rGHeF1KlqNbl-nJmnQV_eLNYpklb3fJvRId5AYh6VvBuNnesceQxC0g.jpg?quality=95&as=32x23,48x34,72x51,108x76,160x113,240x170,360x255,480x340,540x382,640x453,720x509,1080x764,1280x906,1440x1019,1754x1241&from=bu&cs=1754x0" 
+                 alt="Программирование на Python">
+          </a>
+          <p id="cert-python">Программирование на Python</p>
+        </div>
+        <div class="certificate-item">
+          <a href="https://stepik.org/cert/3010554" target="_blank">
+            <img src="https://sun9-17.userapi.com/s/v1/if2/fACmzYmJW8dP5AbgA0d9rAGACea07FAIgthlx1VNHar2azyPxheB0VSMoQ3sKN5xg2_yoAoqqjQ7QECeQEF3CrhQ.jpg?quality=95&as=32x23,48x34,72x51,108x76,160x113,240x170,360x255,480x340,540x382,640x453,720x509,1080x764,1280x906,1440x1019,1754x1241&from=bu&cs=1754x0" 
+                 alt="Веб-разработка для начинающих">
+          </a>
+          <p id="cert-web">Веб-разработка для начинающих: HTML и CSS</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Обновлённый блок навыков -->
+    <section id="skills">
+      <h2 id="skills-title">Навыки</h2>
+      <ul class="skills-list" id="skills-list">
+        <li id="skill1">Поддержка и диагностика ПК.</li>
+        <li id="skill2">Работа с операционной системой, восстановление данных, администрирование.</li>
+        <li id="skill3">Знание Excel и 1С.</li>
+        <li id="skill4">Ориентирование в справочно-правовых системах («КонсультантПлюс», «Гарант»).</li>
+        <li id="skill5">Свободное владение MS Office.</li>
+        <li id="skill6">Знание Python (автоматизация), HTML/CSS, нейросети (практическое применение).</li>
+        <li id="skill7">Навык координирования и организации своих действий.</li>
+        <li id="skill8">Инициирование деятельности по автоматизации работы для достижения результата.</li>
+        <li id="skill9">Грамотная устная и письменная речь, ведение деловой переписки.</li>
+        <li id="skill10">Английский — B2 (свободное чтение документации, уверенная устная речь).</li>
+      </ul>
+    </section>
+
+    <section id="hobbies">
+      <h2 id="hobbies-title">Хобби и увлечения</h2>
+      <p class="hobbies" id="hobbies-text">In my free time, I study architecture, read educational literature, travel, and watch quality movies.</p>
+    </section>
+
+    <footer>
+      <p id="footer-text">Resume updated in October 2025 • Remote work preferred</p>
+    </footer>
+  </div>
+
+  <!-- Всплывающее уведомление -->
+  <div id="copy-notification" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--secondary);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+  ">Скопировано!</div>
+
+  <script>
+    const translations = {
+      ru: {
+        pageTitle: "Ермолаев Никита Андреевич — Резюме",
+        name: "Ермолаев Никита Андреевич",
+        jobTitle: "IT-специалист | Поддержка пользователей | Автоматизация процессов",
+        aboutTitle: "Обо мне",
+        aboutText: "Технический специалист с опытом самостоятельной работы в сфере IT-сервисов, автоматизации и клиентской поддержки. За последние годы занимался разработкой и сопровождением онлайн-проектов — от создания сайтов и чат-ботов до настройки безопасных систем коммуникации и перевода данных между странами. Умею выстраивать рабочие процессы с нуля, оптимизировать рутинные задачи с помощью Python и нейросетевых инструментов, повышая скорость и качество работы.\nВ работе делаю упор на эффективность, прозрачность и клиентоориентированный подход — умею находить общий язык с клиентами, выявлять их реальные потребности и помогать даже в сложных или нестандартных ситуациях.\nБыстро осваиваю новые технологии, умею работать в режиме многозадачности и беру ответственность за результат.",
+        experienceTitle: "Опыт работы",
+        experienceContent: `
+          <p><strong>Самозанятость</strong> • Июль 2020 — настоящее время</p>
+          <ul>
+            <li>Создание магазинов и сайтов для продажи на RMT-площадках.</li>
+            <li>Разработка ботов для автоматизации процессов, включая взаимодействие с клиентами.</li>
+            <li>Организация системы легальных валютных переводов между странами.</li>
+            <li>Помощь пользователям в настройке программ и оборудования (Windows, офисные приложения, браузеры, VPN и т.п.).</li>
+            <li>Диагностика и устранение неполадок ПК, восстановление данных, установка и обновление ОС.</li>
+            <li>Консультации по работе с онлайн-сервисами (электронная почта, облачные решения, криптосервисы).</li>
+            <li>Автоматизация рутинных задач с помощью Python и нейросетевых инструментов.</li>
+            <li>Поддержание высокого уровня удовлетворённости клиентов за счёт внимательности и эмпатии.</li>
+          </ul>
+        `,
+        educationTitle: "Образование",
+        educationText: "Сургутский государственный университет • Бакалавриат по направлению «Экология» • 2021 г.",
+        additionalEducationTitle: "Дополнительное образование",
+        certPython: "Программирование на Python",
+        certWeb: "Веб-разработка для начинающих: HTML и CSS",
+        skillsTitle: "Навыки",
+        skill1: "Поддержка и диагностика ПК.",
+        skill2: "Работа с операционной системой, восстановление данных, администрирование.",
+        skill3: "Знание Excel и 1С.",
+        skill4: "Ориентирование в справочно-правовых системах («КонсультантПлюс», «Гарант»).",
+        skill5: "Свободное владение MS Office.",
+        skill6: "Знание Python (автоматизация), HTML/CSS, нейросети (практическое применение).",
+        skill7: "Навык координирования и организации своих действий.",
+        skill8: "Инициирование деятельности по автоматизации работы для достижения результата.",
+        skill9: "Грамотная устная и письменная речь, ведение деловой переписки.",
+        skill10: "Английский — B2 (свободное чтение документации, уверенная устная речь).",
+        hobbiesTitle: "Хобби и увлечения",
+        hobbiesText: "Интересуюсь современными IT-технологиями, макроэкономикой и развитием цифровых рынков. Изучаю устройство платёжных систем, блокчейн и механизмы автоматизации процессов. Увлекаюсь прикладным программированием, интернет-маркетингом и анализом эффективности бизнес-моделей. Особое внимание уделяю вопросам легальности ведения бизнеса, его организационной структуре и финансовой прозрачности. Нравится исследовать, как технологии и грамотная система управления помогают создавать устойчивые и масштабируемые проекты.",
+        contactsTitle: "Контакты",
+        locationText: "Астана, Казахстан",
+        citizenshipText: "Гражданство: РФ, ВНЖ: РК",
+        footerText: "Резюме обновлено в октябре 2025 • Формат работы: удалённо"
+      },
+      en: {
+        pageTitle: "Nikita Ermolaev — Resume",
+        name: "Nikita Ermolaev",
+        jobTitle: "IT Specialist | User Support | Process Automation",
+        aboutTitle: "About Me",
+        aboutText: "Technical specialist with experience in independent work in IT services, automation, and client support. Over recent years, I have developed and maintained online projects — from building websites and chatbots to setting up secure communication systems and cross-border data transfer solutions. I can design workflows from scratch and optimize routine tasks using Python and AI tools to improve speed and quality.\nI prioritize efficiency, transparency, and a client-oriented approach — skilled at building rapport, identifying real client needs, and providing support even in complex or non-standard situations.\nI quickly learn new technologies, handle multitasking effectively, and take full responsibility for results.",
+        experienceTitle: "Work Experience",
+        experienceContent: `
+          <p><strong>Self-employed</strong> • July 2020 — Present</p>
+          <ul>
+            <li>Building online stores and websites for RMT platforms.</li>
+            <li>Developing automation bots for customer interaction and routine tasks.</li>
+            <li>Setting up legal international currency transfer systems.</li>
+            <li>Providing user support for software setup (Windows, Office, browsers, VPN, etc.).</li>
+            <li>Troubleshooting PC issues, data recovery, OS installation and updates.</li>
+            <li>Consulting on online services (email, cloud solutions, crypto platforms).</li>
+            <li>Automating workflows using Python and AI tools.</li>
+            <li>Maintaining high client satisfaction through empathy and attention to detail.</li>
+          </ul>
+        `,
+        educationTitle: "Education",
+        educationText: "Surgut State University • Bachelor's in Ecology • 2021",
+        additionalEducationTitle: "Additional Education",
+        certPython: "Python Programming",
+        certWeb: "Web Development for Beginners: HTML & CSS",
+        skillsTitle: "Skills",
+        skill1: "PC support and diagnostics.",
+        skill2: "Operating system management, data recovery, system administration.",
+        skill3: "Proficient in Excel and 1C.",
+        skill4: "Experience with legal reference systems (ConsultantPlus, Garant).",
+        skill5: "Advanced MS Office skills.",
+        skill6: "Python (automation), HTML/CSS, practical use of AI tools.",
+        skill7: "Strong self-organization and coordination abilities.",
+        skill8: "Proactive in initiating automation to achieve results.",
+        skill9: "Clear written and verbal communication; business correspondence.",
+        skill10: "English — B2 (comfortable reading documentation, confident speaking).",
+        hobbiesTitle: "Hobbies & Interests",
+        hobbiesText: "I’m interested in modern IT technologies, macroeconomics, and the development of digital markets. I study payment systems, blockchain, and process automation mechanisms. I enjoy applied programming, digital marketing, and analyzing business model efficiency. I pay special attention to business legality, organizational structure, and financial transparency. I’m passionate about exploring how technology and sound management systems enable the creation of sustainable and scalable projects.",
+        contactsTitle: "Contacts",
+        locationText: "Astana, Kazakhstan",
+        citizenshipText: "Citizenship: Russia, Residence permit: Kazakhstan",
+        footerText: "Resume updated in October 2025 • Remote work preferred"
+      }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'ru';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      
+      document.getElementById('page-title').textContent = translations[lang].pageTitle;
+      document.getElementById('name').textContent = translations[lang].name;
+      document.getElementById('job-title').textContent = translations[lang].jobTitle;
+      document.getElementById('about-title').textContent = translations[lang].aboutTitle;
+      document.getElementById('about-text').textContent = translations[lang].aboutText;
+      document.getElementById('experience-title').textContent = translations[lang].experienceTitle;
+      document.getElementById('experience-content').innerHTML = translations[lang].experienceContent;
+      document.getElementById('education-title').textContent = translations[lang].educationTitle;
+      document.getElementById('education-text').textContent = translations[lang].educationText;
+      document.getElementById('additional-education-title').textContent = translations[lang].additionalEducationTitle;
+      document.getElementById('cert-python').textContent = translations[lang].certPython;
+      document.getElementById('cert-web').textContent = translations[lang].certWeb;
+      document.getElementById('skills-title').textContent = translations[lang].skillsTitle;
+      document.getElementById('skill1').textContent = translations[lang].skill1;
+      document.getElementById('skill2').textContent = translations[lang].skill2;
+      document.getElementById('skill3').textContent = translations[lang].skill3;
+      document.getElementById('skill4').textContent = translations[lang].skill4;
+      document.getElementById('skill5').textContent = translations[lang].skill5;
+      document.getElementById('skill6').textContent = translations[lang].skill6;
+      document.getElementById('skill7').textContent = translations[lang].skill7;
+      document.getElementById('skill8').textContent = translations[lang].skill8;
+      document.getElementById('skill9').textContent = translations[lang].skill9;
+      document.getElementById('skill10').textContent = translations[lang].skill10;
+      document.getElementById('hobbies-title').textContent = translations[lang].hobbiesTitle;
+      document.getElementById('hobbies-text').textContent = translations[lang].hobbiesText;
+      document.getElementById('contacts-title').textContent = translations[lang].contactsTitle;
+      document.getElementById('location-text').textContent = translations[lang].locationText;
+      document.getElementById('citizenship-text').textContent = translations[lang].citizenshipText;
+      document.getElementById('footer-text').textContent = translations[lang].footerText;
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      document.documentElement.setAttribute('lang', lang === 'ru' ? 'ru' : 'en');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setLanguage(btn.dataset.lang);
+        });
+      });
+
+      // Копирование email
+      document.getElementById('email').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('nikitaer2789@gmail.com');
+          const notification = document.getElementById('copy-notification');
+          notification.style.opacity = '1';
+          setTimeout(() => {
+            notification.style.opacity = '0';
+          }, 1500);
+        } catch (err) {
+          console.warn('Не удалось скопировать email:', err);
+        }
+      });
+
+      // Анимация секций
+      const sections = document.querySelectorAll('section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+</body>
+</html>
